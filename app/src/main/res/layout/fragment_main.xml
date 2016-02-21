@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivPimtha"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/kbvImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:gravity="left"
+        android:layout_marginTop="25dp"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivCircle"
+            android:layout_width="80dp"
+            android:layout_height="80dp"/>
+
+        <TextView
+            android:id="@+id/tvHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to_pimtha_gallery"
+            android:gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_gravity="center"
+            android:textColor="@color/grey_300"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnGallery"
+        android:layout_width="match_parent"
+        android:layout_margin="16dp"
+        android:text="View Gallery"
+        android:padding="16dp"
+        android:backgroundTint="@color/indigo_500"
+        android:textColor="@color/grey_white_1000"
+        android:layout_gravity="bottom"
+        android:layout_height="wrap_content"/>
+
+</FrameLayout>
