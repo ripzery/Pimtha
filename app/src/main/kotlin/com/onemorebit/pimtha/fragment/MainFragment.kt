@@ -2,6 +2,7 @@ package com.onemorebit.pimtha.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -108,7 +109,12 @@ class MainFragment : Fragment() {
                 .unsubscribeOn(Schedulers.io())
                 .subscribe { /* update view loading progress */
                     if (count < pimthaArray.size) tvHello.text = "Loading image $count/${pimthaArray.size}"
-                    else tvHello.text = "Complete ${pimthaArray.size}/${pimthaArray.size}"
+                    else {
+                        tvHello.text = "Complete ${pimthaArray.size}/${pimthaArray.size}"
+                        Handler().postDelayed({
+                            tvHello.visibility = View.GONE
+                        }, 3000)
+                    }
                 }
     }
 
@@ -118,7 +124,7 @@ class MainFragment : Fragment() {
         Glide.with(this@MainFragment).load(R.drawable.pimtha1).into(ivCircle)
         Glide.with(this@MainFragment).load(R.drawable.pimtha1).into(kbvImage)
 
-        ivCircle.setOnClickListener { setPimthaRandomImg() }
+        kbvImage.setOnClickListener { setPimthaRandomImg() }
         tvHello.setOnClickListener { activity.toast("This is a toast msg [${param1.plus(param2)}]") }
         btnGallery.setOnClickListener {
             var intent: Intent = Intent(activity, ImageGalleryActivity::class.java)
