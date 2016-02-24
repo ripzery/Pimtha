@@ -6,6 +6,7 @@ import com.onemorebit.pimtha.extension.get
 import com.onemorebit.pimtha.extension.log
 import com.onemorebit.pimtha.extension.toast
 import com.onemorebit.pimtha.fragment.MainFragment
+import com.onemorebit.pimtha.fragment.VideoFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
 
         var mainFragment = MainFragment.getInstance("Hello", "World")
+        var videoFragment = VideoFragment.getInstance("Hello", "World")
 
         /* Inflate this fragment */
         supportFragmentManager.beginTransaction().replace(R.id.contentContainer, mainFragment).commit()
